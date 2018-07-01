@@ -19,7 +19,7 @@ th.num, td.num { text-align: center; }
 
 
 // parse the date / time
-/*var parseTime = d3.timeParse("%d-%b-%y");*/
+var parseTime = d3.timeParse("%Y");
 
 
 // Get the data
@@ -28,10 +28,10 @@ d3.csv("kosten.csv", function(error, data) {
 
   // format the data
   data.forEach(function(d) {
-      //d.date1 = parseTime(d.date);
-      d.jaar = +d.jaar
+      d.jaar1 = parseTime(d.jaar);
+      //d.jaar = +d.jaar
       d.eur = +d.eur;
-      return d;
+      //return d;
       //d.open = +d.open;  //  <= added this for tidy house keeping
       //d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
   });
