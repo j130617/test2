@@ -18,7 +18,7 @@ th.num, td.num { text-align: center; }
 <script>
 
 // parse the date / time
-var parseTime = d3.timeParse("%Y");
+//var parseTime = d3.timeParse("%Y");
 
 
 // Get the data
@@ -28,7 +28,7 @@ d3.csv("kosten.csv", function(error, data) {
   // format the data
   data.forEach(function(d) {
       //d.date1 = parseTime(d.date);
-      d.jaar1 = parseTime(d.jaar);
+      //d.jaar1 = parseTime(d.jaar);
       //d.jaar = +d.jaar;
       d.eur = +d.eur;
       //return d;
