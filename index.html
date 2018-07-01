@@ -19,19 +19,19 @@ th.num, td.num { text-align: center; }
 
 
 // parse the date / time
-var parseTime = d3.timeParse("%d-%b-%y");
+/*var parseTime = d3.timeParse("%d-%b-%y");*/
 
 
 // Get the data
-d3.csv("stocks.csv", function(error, data) {
+d3.csv("kosten.csv", function(error, data) {
   if (error) throw error;
 
   // format the data
   data.forEach(function(d) {
-      d.date1 = parseTime(d.date);
-      d.close = +d.close;
-      d.open = +d.open;  //  <= added this for tidy house keeping
-      d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
+      //d.date1 = parseTime(d.date);
+      d.eur = +d.eur;
+      //d.open = +d.open;  //  <= added this for tidy house keeping
+      //d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
   });
 
  
@@ -46,7 +46,7 @@ function tabulate(data, columns) {
             .attr("height", height + margin.top + margin.bottom)
             //.attr("style", "margin-left: 360px")
             .style("border-collapse", "collapse")
-            .style("border", "2px black solid"),
+            .style("border", "1px grey"),
         thead = table.append("thead"),
         tbody = table.append("tbody");
 
@@ -73,7 +73,7 @@ function tabulate(data, columns) {
         })
         .enter()
         .append("td")
-        .attr("style", "font-family: Courier") // sets the font style
+        .attr("style", "font-family: Arial") // sets the font style
             .html(function(d) { return d.value; });
     
     return table;
