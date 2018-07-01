@@ -36,7 +36,9 @@ d3.csv("stocks.csv", function(error, data) {
 // The table generation function
 function tabulate(data, columns) {
     var table = d3.select("body").append("table")
-            .attr("style", "margin-left: 360px")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            //.attr("style", "margin-left: 360px")
             .style("border-collapse", "collapse")
             .style("border", "2px black solid"),
         thead = table.append("thead"),
