@@ -86,7 +86,8 @@ var peopleTable = tabulate(data, ["jaar", "eur"]);
 
 peopleTable.selectAll("tbody tr") 
            .sort(function(a, b) {
-             return d3.descending(a.eur, b.eur);
+             //return d3.descending(a.eur, b.eur);
+             return d3.ascending(a.jaar, b.jaar);
            });
 
 peopleTable.selectAll("thead th")
