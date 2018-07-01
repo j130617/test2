@@ -27,12 +27,13 @@ d3.csv("stocks.csv", function(error, data) {
 
   // format the data
   data.forEach(function(d) {
-      d.date1 = parseTime(d.date);
-      //d.jaar = +d.jaar
-      //d.eur = +d.eur;
+      //d.date1 = parseTime(d.date);
+      d.jaar1 = parseTime(d.jaar);
+      //d.jaar = +d.jaar;
+      d.eur = +d.eur;
       //return d;
-      d.open = +d.open;  //  <= added this for tidy house keeping
-      d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
+      //d.open = +d.open;  //  <= added this for tidy house keeping
+      //d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
   });
 
  
@@ -81,11 +82,11 @@ function tabulate(data, columns) {
 }
 
 // render the table
-var peopleTable = tabulate(data, ["date", "open", "close", "diff"]);
+var peopleTable = tabulate(data, ["jaar", "eur"]);
 
 peopleTable.selectAll("tbody tr") 
            .sort(function(a, b) {
-             return d3.descending(a.close, b.close);
+             return d3.descending(a.eur, b.eur);
            });
 
 peopleTable.selectAll("thead th")
