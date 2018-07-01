@@ -80,11 +80,11 @@ function tabulate(data, columns) {
 }
 
 // render the table
-var peopleTable = tabulate(data, ["date", "close", "open", "diff"]);
+var peopleTable = tabulate(data, ["jaar", "euro"]);
 
 peopleTable.selectAll("tbody tr") 
            .sort(function(a, b) {
-             return d3.descending(a.close, b.close);
+             return d3.descending(a.eur, b.eur);
            });
 
 peopleTable.selectAll("thead th")
