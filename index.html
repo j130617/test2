@@ -34,6 +34,10 @@ d3.csv("stocks.csv", function(error, data) {
 
  
 // The table generation function
+var margin = {top: 10, right: 20, bottom: 40, left: 50},
+    width = 500 - margin.left - margin.right,
+    height = 275 - margin.top - margin.bottom;
+
 function tabulate(data, columns) {
     var table = d3.select("body").append("table")
             .attr("width", width + margin.left + margin.right)
