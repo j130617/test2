@@ -30,6 +30,7 @@ d3.csv("kosten.csv", function(error, data) {
   data.forEach(function(d) {
       //d.date1 = parseTime(d.date);
       d.eur = +d.eur;
+      return d;
       //d.open = +d.open;  //  <= added this for tidy house keeping
       //d.diff = Math.round(( d.close - d.open ) * 100 ) / 100;
   });
