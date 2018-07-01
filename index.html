@@ -12,11 +12,6 @@ th.num, td.num { text-align: center; }
 
 </style>
 <body>
-
-<!-- load the d3.js library -->    	
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-
 var data = [
   { "date" : '2013-01-01', "close" : 45 },
   { "date" : '2013-02-01', "close" : 50 },
@@ -27,6 +22,11 @@ var data = [
   { "date" : '2013-07-01', "close" : 50 },
   { "date" : '2013-08-01', "close" : 52 }
 ]
+<!-- load the d3.js library -->    	
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
 		
 function tabulate(data, columns) {
 	var table = d3.select('body').append('table')
